@@ -38,7 +38,8 @@ export function upload(client: S3, userOptions: UploadOpts) {
 
     const uploadPath = file.path
       .replace(file.base, options.uploadPath || '')
-      .replace(new RegExp('\\\\', 'g'), '/');
+      .replace(new RegExp('\\\\', 'g'), '/')
+      .replace('/',''); //NOTE: Without this fix, all file s3 keys start with '/'. Example http://your-bucket.s3.amazonaws.com//index.html
 
     const uploadParams: Partial<S3.Types.PutObjectRequest> = options.putObjectParams;
     uploadParams.Bucket = options.bucket;
