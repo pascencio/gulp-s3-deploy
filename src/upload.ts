@@ -7,7 +7,7 @@ import { S3 } from 'aws-sdk'
 import { TransformFunction } from 'through2';
 
 const defaultMimeType = 'text/plain'; // eslint-disable-line
-const PLUGIN_NAME = 'gulp-s3-publish/upload';
+const PLUGIN_NAME = 'gulp-s3-deploy/upload';
 
 export interface UploadOpts {
   bucket: string;

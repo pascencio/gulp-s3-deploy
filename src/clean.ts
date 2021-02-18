@@ -6,7 +6,7 @@ import * as log from 'fancy-log';
 import { S3 } from 'aws-sdk'
 import { chunk } from 'lodash';
 
-const PLUGIN_NAME = 'gulp-s3-publish/clean';
+const PLUGIN_NAME = 'gulp-s3-deploy/clean';
 
 export interface CleanOpts {
   bucket: string;
@@ -42,7 +42,8 @@ export function clean(client: S3, userOptions: CleanOpts) {
 
     const uploadPath = file.path
       .replace(file.base, options.uploadPath || '')
-      .replace(new RegExp('\\\\', 'g'), '/');
+      .replace(new RegExp('\\\\', 'g'), '/')
+      .replace('/',''); //NOTE: Without this fix, all file s3 keys start with '/'. Example http://your-bucket.s3.amazonaws.com//index.html
   
     files.push(uploadPath);
     return callback();
