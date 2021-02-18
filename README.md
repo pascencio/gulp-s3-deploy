@@ -12,12 +12,12 @@ This plugin is a fork of [gulp-s3-publish](https://github.com/adrianfalleiro/gul
 First, install `gulp-s3-deploy` and `aws-sdk` as a development dependency:
 
 ```shell
-npm install --save-dev gulp-s3-deploy aws-sdk
+npm i --save-dev @pascencio/gulp-s3-deploy aws-sdk
 ```
 
-Then, use it in your `Gulpfile.js`:
+Then, use it in your `gulpfile.js`:
 ```javascript
-const { upload, clean } = require('gulp-s3-deploy');
+const { upload, clean } = require('@pascencio/gulp-s3-deploy');
 const { S3 } = require('aws-sdk'); 
 
 const client = new S3();
@@ -57,4 +57,4 @@ gulp.task('deploy', () => {
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
 
-[npm-url]: https://npmjs.org/package/gulp-s3-deploy
+[npm-url]: https://www.npmjs.com/package/@pascencio/gulp-s3-deploy
