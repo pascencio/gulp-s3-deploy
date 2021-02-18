@@ -1,6 +1,6 @@
 {
   "name": "@pascencio/gulp-s3-deploy",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A plugin for Gulp that deploy files to s3",
   "keywords": [
     "gulp-plugin",
